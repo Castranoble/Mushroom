@@ -16,6 +16,7 @@ class GAME_API AMainCharacter : public ACharacter
 	class UCameraComponent* PlayerCamera;
 	UPROPERTY(EditAnywhere, Category = "camera")
 	class USpringArmComponent* CameraBoom;
+
 	
 public:
 	// Sets default values for this character's properties
@@ -23,7 +24,15 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-protected:
+private:
+	// Fields
+	UPROPERTY(EditAnywhere, Category = "Camera")
+	float CameraArmLength;
+	UPROPERTY(EditAnywhere, Category = "Camera")
+	FVector CameraSocketOffset;
+	UPROPERTY(EditAnywhere, Category = "Camera")
+	FRotator CameraRelativeRotation;
+	
 	// Movement functions
 	void MoveYAxis(float Val);
 	void MoveXAxis(float Val);
