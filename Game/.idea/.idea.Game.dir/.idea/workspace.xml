@@ -7,8 +7,11 @@
     <list default="true" id="0524bdf2-124e-4330-9926-75563789b263" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Game.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Areas/Test_Area.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Areas/Test_Area.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_Blueprints/Character/BP_MainCharacter.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Game/Private/Character/MainCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Game/Private/Character/MainCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Game/Private/Interactions/Interactable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Game/Private/Interactions/Interactable.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Game/Public/Character/MainCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Game/Public/Character/MainCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Game/Public/Interactions/Interactable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Game/Public/Interactions/Interactable.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +86,7 @@
       <updated>1644241804361</updated>
       <workItem from="1644241822601" duration="5597000" />
       <workItem from="1644249087033" duration="1707000" />
+      <workItem from="1644263227899" duration="6727000" />
     </task>
     <servers />
   </component>

@@ -75,11 +75,14 @@ void AMainCharacter::MoveXAxis(float Val)
 
 void AMainCharacter::InteractWith()
 {
+	UE_LOG(LogTemp, Log, TEXT("0000 ---- InteractWith was called"));
 	TraceForward();
 }
 
 void AMainCharacter::TraceForward()
 {
+	UE_LOG(LogTemp, Log, TEXT("0001 ---- TraceForward was called"));
+	
 	FVector Location = GetActorLocation();
 	FRotator Rotation = GetActorRotation();
 	FHitResult HitResult;

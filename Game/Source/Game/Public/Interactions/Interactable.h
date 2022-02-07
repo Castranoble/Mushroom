@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/BoxComponent.h"
+#include "Components/SphereComponent.h"
 #include "GameFramework/Actor.h"
 #include "Interactable.generated.h"
 
@@ -16,4 +18,9 @@ public:
 	AInteractable();
 
 	void OnInteract(AActor* InterActor);
+
+private:
+	// Fields
+	UPROPERTY(EditAnywhere, Category = "Collision")
+	UBoxComponent* CollisionBox;
 };
