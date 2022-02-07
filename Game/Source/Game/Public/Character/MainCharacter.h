@@ -32,6 +32,8 @@ private:
 	FVector CameraSocketOffset;
 	UPROPERTY(EditAnywhere, Category = "Camera")
 	FRotator CameraRelativeRotation;
+	UPROPERTY(EditAnywhere, Category = "Debugging")
+	float TraceDistance;
 	
 	// Movement functions
 	void MoveYAxis(float Val);

@@ -2,14 +2,18 @@
 
 
 #include "Character/MainCharacter.h"
+
+#include "DrawDebugHelpers.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Interactions/Interactable.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter()
 {
-	// --- Camera default settings ---
+	// --- Camera default settings --- \\
+	// Configures and attaches the camera to the player character, by using a Spring Arm Component
 	if (!CameraArmLength)
 	{
 		CameraArmLength = 500.f;
@@ -31,7 +35,8 @@ AMainCharacter::AMainCharacter()
 	PlayerCamera->bUsePawnControlRotation = false; // We don't want the controller rotating the camera
 	
 
-	// --- Configure character movement --- 
+	// --- Configure character movement --- \\
+	// Specify the movement boundaries
 	GetCharacterMovement()->bOrientRotationToMovement = true; // Face in the direction we are moving..
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 720.0f, 0.0f); // ...at this rotation rate
 	GetCharacterMovement()->GravityScale = 2.f;
@@ -70,11 +75,39 @@ void AMainCharacter::MoveXAxis(float Val)
 
 void AMainCharacter::InteractWith()
 {
-	
+	TraceForward();
 }
 
 void AMainCharacter::TraceForward()
 {
+	FVector Location = GetActorLocation();
+	FRotator Rotation = GetActorRotation();
+	FHitResult HitResult;
+
+	FVector StartLoc = Location;
+	FVector EndLoc = StartLoc + (Rotation.Vector() * TraceDistance);
+
+	FCollisionQueryParams ColQueryParams;
+	GetWorld()->LineTraceSingleByChannel(HitResult, StartLoc, EndLoc, ECC_Visibility, ColQueryParams);
+
+	DrawDebugLine(GetWorld(), StartLoc, EndLoc, FColor::Red, false, 2.0f);
+
+	AActor* HitActor = HitResult.GetActor();
 	
+	if (!HitActor)
+	{
+		return;
+	}
+	
+	DrawDebugBox(GetWorld(), HitResult.ImpactPoint, FVector(5,5,5), FColor::Cyan, false, 2.f);
+	
+	AInteractable* Interaction = Cast<AInteractable>(HitActor);
+
+	if (Interaction == nullptr)
+	{
+		return;
+	}
+	Interaction->OnInteract(this);
+
 }
 
