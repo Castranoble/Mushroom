@@ -2,7 +2,6 @@
 
 
 #include "Character/MainCharacter.h"
-
 #include "DrawDebugHelpers.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -67,6 +66,11 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
+void AMainCharacter::StartInteraction(AInteractable* Interaction)
+{
+	Interaction->OnInteract();
+}
+
 void AMainCharacter::MoveYAxis(float Val)
 {
 	AddMovementInput(FVector(0.f,-1.f,0.f), Val);
@@ -108,13 +112,13 @@ void AMainCharacter::TraceForward()
 	
 	DrawDebugBox(GetWorld(), HitResult.ImpactPoint, FVector(5,5,5), FColor::Cyan, false, 2.f);
 	
-	/*IIInteractable* Interaction = Cast<IIInteractable>(HitActor);
+	AInteractable* Interaction = Cast<AInteractable>(HitActor);
 
 	if (Interaction == nullptr)
 	{
 		return;
 	}
-	Interaction->OnInteract();
-*/
+	StartInteraction(Interaction);
+
 }
 

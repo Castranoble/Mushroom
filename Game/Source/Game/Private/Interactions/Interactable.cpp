@@ -9,6 +9,11 @@ AInteractable::AInteractable()
 	CollisionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Collision Box"));
 }
 
+void AInteractable::OnInteract()
+{
+	UE_LOG(LogTemp, Log, TEXT("0002 ---- Interactable OnInteract was called"));
+}
+
 
 
 
