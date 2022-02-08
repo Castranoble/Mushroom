@@ -3,21 +3,20 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "IInteractable.h"
 #include "Components/BoxComponent.h"
 #include "Components/SphereComponent.h"
 #include "GameFramework/Actor.h"
 #include "Interactable.generated.h"
 
 UCLASS()
-class GAME_API AInteractable : public AActor
+class GAME_API AInteractable : public AActor, public IIInteractable
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
 	AInteractable();
-
-	void OnInteract(AActor* InterActor);
 
 private:
 	// Fields

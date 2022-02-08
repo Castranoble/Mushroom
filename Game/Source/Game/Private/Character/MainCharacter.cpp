@@ -33,7 +33,11 @@ AMainCharacter::AMainCharacter()
 	PlayerCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("SideViewCamera"));
 	PlayerCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	PlayerCamera->bUsePawnControlRotation = false; // We don't want the controller rotating the camera
-	
+
+	// Don't rotate when the controller rotates.
+	bUseControllerRotationPitch = false;
+	bUseControllerRotationYaw = false;
+	bUseControllerRotationRoll = false;
 
 	// --- Configure character movement --- \\
 	// Specify the movement boundaries
@@ -104,13 +108,13 @@ void AMainCharacter::TraceForward()
 	
 	DrawDebugBox(GetWorld(), HitResult.ImpactPoint, FVector(5,5,5), FColor::Cyan, false, 2.f);
 	
-	AInteractable* Interaction = Cast<AInteractable>(HitActor);
+	/*IIInteractable* Interaction = Cast<IIInteractable>(HitActor);
 
 	if (Interaction == nullptr)
 	{
 		return;
 	}
-	Interaction->OnInteract(this);
-
+	Interaction->OnInteract();
+*/
 }
 

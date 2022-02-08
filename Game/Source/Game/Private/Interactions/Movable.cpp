@@ -10,5 +10,3 @@ AMovable::AMovable()
 	
 }
 
-//void AInteractable::OnInteract(AActor* InterActor)
-

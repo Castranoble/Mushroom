@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "IInteractable.h"
 #include "Interactions/Interactable.h"
 #include "Movable.generated.h"
 
