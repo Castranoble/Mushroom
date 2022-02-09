@@ -7,6 +7,7 @@
 AInteractable::AInteractable()
 {
 	CollisionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Collision Box"));
+	CollisionBox->SetupAttachment(RootComponent);
 }
 
 void AInteractable::OnInteract()

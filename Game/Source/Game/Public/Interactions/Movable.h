@@ -25,7 +25,7 @@ public:
 	
 	//Startup
 	virtual void BeginPlay() override;
-	virtual void Tick(float DeltaSeconds) override;
+
 private:
 	// --- Properties --- \\
 	// Movement
@@ -33,14 +33,15 @@ private:
 	AActor* MovableObject;
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	UCurveFloat* MovementDuration;
-	UPROPERTY(EditAnywhere, Category = "Movement")
-	float Duration;
 
 	UPROPERTY()
 	FVector StartLocation;
 	UPROPERTY()
 	FRotator StartRotation;
-	FTimeline MovementTimeLine;
+	UPROPERTY(EditAnywhere)
+	UTimelineComponent* MovementTimeLine;
+	UPROPERTY()
+	FOnTimelineFloat UpdateMovementFloat;
 	
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	FVector EndLocation;
@@ -51,8 +52,4 @@ private:
 	// Timeline
 	UFUNCTION()
 	void ProcessTimelineMotion(float Val);
-	UFUNCTION()
-	void FinishTimelineMotion();
-	UFUNCTION()
-	void MoveObject();
 };
