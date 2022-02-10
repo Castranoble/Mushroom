@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Interactions/IInteractable.h"
+#include "Interactions/Interactable.h"
 #include "MainCharacter.generated.h"
 
 UCLASS()
@@ -23,15 +25,20 @@ public:
 	AMainCharacter();
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	void StartInteraction(AInteractable* Interaction);
 
 private:
-	// Fields
+	// Camera Fields
 	UPROPERTY(EditAnywhere, Category = "Camera")
 	float CameraArmLength;
 	UPROPERTY(EditAnywhere, Category = "Camera")
 	FVector CameraSocketOffset;
 	UPROPERTY(EditAnywhere, Category = "Camera")
 	FRotator CameraRelativeRotation;
+
+	//Interaction Fields
+	UPROPERTY(EditAnywhere, Category = "Debugging")
+	float TraceDistance;
 	
 	// Movement functions
 	void MoveYAxis(float Val);
