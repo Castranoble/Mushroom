@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Interactions/IInteractable.h"
 #include "Interactions/Interactable.h"
 #include "MainCharacter.generated.h"
 
@@ -37,7 +36,7 @@ private:
 	FRotator CameraRelativeRotation;
 
 	//Interaction Fields
-	UPROPERTY(EditAnywhere, Category = "Debugging")
+	UPROPERTY(EditAnywhere, Category = "Interaction")
 	float TraceDistance;
 	
 	// Movement functions

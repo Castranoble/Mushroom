@@ -15,7 +15,7 @@ AMainCharacter::AMainCharacter()
 	// Configures and attaches the camera to the player character, by using a Spring Arm Component
 	if (!CameraArmLength)
 	{
-		CameraArmLength = 500.f;
+		CameraArmLength = 1000.f;
 		CameraSocketOffset = FVector(0.f,0.f,75.f);
 		CameraRelativeRotation = FRotator(0.f,180.f,0.f);
 	}
@@ -38,7 +38,7 @@ AMainCharacter::AMainCharacter()
 	bUseControllerRotationYaw = false;
 	bUseControllerRotationRoll = false;
 
-	// --- Configure character movement --- \\
+	// --- Configure character settings --- \\
 	// Specify the movement boundaries
 	GetCharacterMovement()->bOrientRotationToMovement = true; // Face in the direction we are moving..
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 720.0f, 0.0f); // ...at this rotation rate
@@ -48,7 +48,9 @@ AMainCharacter::AMainCharacter()
 	GetCharacterMovement()->GroundFriction = 3.f;
 	GetCharacterMovement()->MaxWalkSpeed = 600.f;
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
-	
+
+	// Interaction range
+	TraceDistance = 1000.f;
 }
 
 // Called to bind functionality to input
@@ -83,14 +85,12 @@ void AMainCharacter::MoveXAxis(float Val)
 
 void AMainCharacter::InteractWith()
 {
-	UE_LOG(LogTemp, Log, TEXT("0000 ---- InteractWith was called"));
+	UE_LOG(LogTemp, Log, TEXT("0001 ---- InteractWith was called"));
 	TraceForward();
 }
 
 void AMainCharacter::TraceForward()
 {
-	UE_LOG(LogTemp, Log, TEXT("0001 ---- TraceForward was called"));
-	
 	FVector Location = GetActorLocation();
 	FRotator Rotation = GetActorRotation();
 	FHitResult HitResult;
