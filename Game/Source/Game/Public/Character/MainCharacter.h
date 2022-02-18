@@ -38,6 +38,8 @@ private:
 	//Interaction Fields
 	UPROPERTY(EditAnywhere, Category = "Interaction")
 	float TraceDistance;
+	UPROPERTY(EditAnywhere, Category = "Interaction")
+	UCapsuleComponent* PlayerCapsuleCollider;
 	
 	// Movement functions
 	void MoveYAxis(float Val);
@@ -47,5 +49,10 @@ private:
 	void InteractWith();
 	void TraceForward();
 
+	//When player overlaps with other (trigger) components
+	UFUNCTION()
+	void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	UFUNCTION()
+	void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	
 };

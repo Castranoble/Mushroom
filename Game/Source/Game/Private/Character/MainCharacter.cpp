@@ -4,6 +4,7 @@
 #include "Character/MainCharacter.h"
 #include "DrawDebugHelpers.h"
 #include "Camera/CameraComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Interactions/Interactable.h"
@@ -51,6 +52,16 @@ AMainCharacter::AMainCharacter()
 
 	// Interaction range
 	TraceDistance = 1000.f;
+	PlayerCapsuleCollider = this->GetCapsuleComponent();
+	if (PlayerCapsuleCollider)
+	{
+		PlayerCapsuleCollider->OnComponentBeginOverlap.AddDynamic(this, &AMainCharacter::OnOverlapBegin);
+		PlayerCapsuleCollider->OnComponentEndOverlap.AddDynamic(this, &AMainCharacter::OnOverlapEnd);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("No capsule collider found on player!"));
+	}
 }
 
 // Called to bind functionality to input
@@ -68,6 +79,7 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
+// Starts object interaction logic
 void AMainCharacter::StartInteraction(AInteractable* Interaction)
 {
 	Interaction->OnInteract();
@@ -120,5 +132,17 @@ void AMainCharacter::TraceForward()
 	}
 	StartInteraction(Interaction);
 
+}
+
+void AMainCharacter::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	UE_LOG(LogTemp, Log, TEXT("0001 ---- Main OnOverlapBegin was called"));
+}
+
+void AMainCharacter::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	UE_LOG(LogTemp, Log, TEXT("0001 ---- Main OnOverlapEnd was called"));
 }
 

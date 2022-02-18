@@ -7,17 +7,21 @@
     <list default="true" id="98ce68f9-2eb5-4f61-aa3c-c7f42ed8a0ed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Game.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Areas/Test_Area.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Areas/Test_Area.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/Interactables/Curves/BridgeCurve.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/Interactables/Curves/BridgeCurve.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Game/Private/Character/MainCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Game/Private/Character/MainCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Game/Private/Interactions/Interactable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Game/Private/Interactions/Interactable.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Game/Private/Interactions/Movable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Game/Private/Interactions/Movable.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Game/Public/Character/MainCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Game/Public/Character/MainCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Game/Public/Interactions/Movable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Game/Public/Interactions/Movable.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -93,6 +97,7 @@
       <workItem from="1644263227899" duration="6727000" />
       <workItem from="1644408719519" duration="4506000" />
       <workItem from="1644758259387" duration="7523000" />
+      <workItem from="1645187936170" duration="4681000" />
     </task>
     <servers />
   </component>
