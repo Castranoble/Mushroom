@@ -50,20 +50,21 @@ AMainCharacter::AMainCharacter()
 	GetCharacterMovement()->MaxWalkSpeed = 600.f;
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
 
-	// Interaction range
+	// Interactions
 	TraceDistance = 1000.f;
+
 	PlayerCapsuleCollider = this->GetCapsuleComponent();
 	if (PlayerCapsuleCollider)
 	{
-		PlayerCapsuleCollider->OnComponentBeginOverlap.AddDynamic(this, &AMainCharacter::OnOverlapBegin);
-		PlayerCapsuleCollider->OnComponentEndOverlap.AddDynamic(this, &AMainCharacter::OnOverlapEnd);
+		OnActorBeginOverlap.AddDynamic(this, &AMainCharacter::OnOverlapBegin);
+		OnActorEndOverlap.AddDynamic(this, &AMainCharacter::OnOverlapEnd);
 	}
 	else
 	{
 		UE_LOG(LogTemp, Error, TEXT("No capsule collider found on player!"));
 	}
 }
-
+// --- Public --- \\
 // Called to bind functionality to input
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -85,6 +86,8 @@ void AMainCharacter::StartInteraction(AInteractable* Interaction)
 	Interaction->OnInteract();
 }
 
+// --- Private --- \\
+// Movement
 void AMainCharacter::MoveYAxis(float Val)
 {
 	AddMovementInput(FVector(0.f,-1.f,0.f), Val);
@@ -95,6 +98,7 @@ void AMainCharacter::MoveXAxis(float Val)
 	AddMovementInput(FVector(-1.f,0.f,0.f), Val);
 }
 
+// Interactions
 void AMainCharacter::InteractWith()
 {
 	UE_LOG(LogTemp, Log, TEXT("0001 ---- InteractWith was called"));
@@ -134,15 +138,22 @@ void AMainCharacter::TraceForward()
 
 }
 
-void AMainCharacter::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
-	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+// Overlap events
+void AMainCharacter::OnOverlapBegin(AActor* OverlappedActor, AActor* OtherActor)
 {
-	UE_LOG(LogTemp, Log, TEXT("0001 ---- Main OnOverlapBegin was called"));
+	if (OtherActor && (OtherActor != OverlappedActor))
+	{
+		UE_LOG(LogTemp, Log, TEXT("0001 ---- Main OnOverlapBegin was called"));
+	}
+
 }
 
-void AMainCharacter::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
-	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+void AMainCharacter::OnOverlapEnd(AActor* OverlappedActor, AActor* OtherActor)
 {
-	UE_LOG(LogTemp, Log, TEXT("0001 ---- Main OnOverlapEnd was called"));
+	if (OtherActor && (OtherActor != OverlappedActor))
+	{
+		UE_LOG(LogTemp, Log, TEXT("0001 ---- Main OnOverlapEnd was called"));
+	}
+	
 }
 
