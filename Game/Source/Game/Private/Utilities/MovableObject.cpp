@@ -16,6 +16,11 @@ AMovableObject::AMovableObject()
 	}
 
 	MovementTimeLine = CreateDefaultSubobject<UTimelineComponent>(TEXT("Movement Timeline"));
+
+	CollisionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Collision Box"));
+	CollisionBox->SetupAttachment(RootComponent);
+	CollisionBox->SetCollisionProfileName("NoCollision");
+	CollisionBox->SetGenerateOverlapEvents(false);
 }
 
 //Called from other classes to start movement based on their events

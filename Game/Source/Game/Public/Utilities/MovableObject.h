@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/BoxComponent.h"
 #include "Components/TimelineComponent.h"
 #include "GameFramework/Actor.h"
 #include "MovableObject.generated.h"
@@ -39,7 +40,7 @@ private:
 	FVector StartLocation;
 	UPROPERTY()
 	FRotator StartRotation;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY()
 	UTimelineComponent* MovementTimeLine;
 	UPROPERTY()
 	FOnTimelineFloat UpdateMovementFloat;
@@ -53,6 +54,10 @@ private:
 	bool MovesAtBeginPlay;
 	UPROPERTY()
 	bool IsMovingForwards;
+
+	//Components
+	UPROPERTY(EditAnywhere, Category = "Collision")
+	UBoxComponent* CollisionBox;
 	
 	// --- Functions --- \\
 	// Timeline movement

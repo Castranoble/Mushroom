@@ -116,9 +116,7 @@ void AMainCharacter::TraceForward()
 
 	FCollisionQueryParams ColQueryParams;
 	GetWorld()->LineTraceSingleByChannel(HitResult, StartLoc, EndLoc, ECC_Visibility, ColQueryParams);
-
 	DrawDebugLine(GetWorld(), StartLoc, EndLoc, FColor::Red, false, 2.0f);
-
 	AActor* HitActor = HitResult.GetActor();
 	
 	if (!HitActor)
@@ -127,7 +125,6 @@ void AMainCharacter::TraceForward()
 	}
 	
 	DrawDebugBox(GetWorld(), HitResult.ImpactPoint, FVector(5,5,5), FColor::Cyan, false, 2.f);
-	
 	AInteractable* Interaction = Cast<AInteractable>(HitActor);
 
 	if (Interaction == nullptr)
