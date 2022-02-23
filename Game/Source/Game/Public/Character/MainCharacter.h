@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Interactions/IInteractable.h"
 #include "Interactions/Interactable.h"
 #include "MainCharacter.generated.h"
 
@@ -37,8 +36,10 @@ private:
 	FRotator CameraRelativeRotation;
 
 	//Interaction Fields
-	UPROPERTY(EditAnywhere, Category = "Debugging")
+	UPROPERTY(EditAnywhere, Category = "Interaction")
 	float TraceDistance;
+	UPROPERTY(EditAnywhere, Category = "Interaction")
+	UCapsuleComponent* PlayerCapsuleCollider;
 	
 	// Movement functions
 	void MoveYAxis(float Val);
@@ -48,5 +49,10 @@ private:
 	void InteractWith();
 	void TraceForward();
 
+	//When player overlaps with other (trigger) components
+	UFUNCTION()
+	void OnOverlapBegin(AActor* OverlappedActor, AActor* OtherActor);
+	UFUNCTION()
+	void OnOverlapEnd(AActor* OverlappedActor, AActor* OtherActor);
 	
 };

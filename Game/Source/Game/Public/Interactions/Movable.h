@@ -3,9 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "IInteractable.h"
-#include "Components/TimelineComponent.h"
 #include "Interactions/Interactable.h"
+#include "Utilities/MovableObject.h"
 #include "Movable.generated.h"
 
 /**
@@ -22,34 +21,8 @@ public:
 	// --- Functions --- \\
 	// Interactions
 	virtual void OnInteract() override;
-	
-	//Startup
-	virtual void BeginPlay() override;
 
 private:
-	// --- Properties --- \\
-	// Movement
-	UPROPERTY(EditAnywhere, Category = "Movement")
-	AActor* MovableObject;
-	UPROPERTY(EditAnywhere, Category = "Movement")
-	UCurveFloat* MovementDuration;
-
-	UPROPERTY()
-	FVector StartLocation;
-	UPROPERTY()
-	FRotator StartRotation;
-	UPROPERTY(EditAnywhere)
-	UTimelineComponent* MovementTimeLine;
-	UPROPERTY()
-	FOnTimelineFloat UpdateMovementFloat;
-	
-	UPROPERTY(EditAnywhere, Category = "Movement")
-	FVector EndLocation;
-	UPROPERTY(EditAnywhere, Category = "Movement")
-	FRotator EndRotation;
-
-	// --- Functions --- \\
-	// Timeline
-	UFUNCTION()
-	void ProcessTimelineMotion(float Val);
+	UPROPERTY(EditAnywhere, Category = "Movable Object")
+	AMovableObject* MovingObject;
 };
