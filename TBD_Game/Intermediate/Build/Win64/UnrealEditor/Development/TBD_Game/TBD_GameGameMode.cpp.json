@@ -1,0 +1,27 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\tbd\\mushroom\\tbd_game\\source\\tbd_game\\tbd_gamegamemode.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\tbd\\mushroom\\tbd_game\\intermediate\\build\\win64\\tbd_gameeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\tbd\\mushroom\\tbd_game\\intermediate\\build\\win64\\unrealeditor\\development\\tbd_game\\definitions.tbd_game.h",
+            "c:\\tbd\\mushroom\\tbd_game\\source\\tbd_game\\tbd_gamegamemode.h",
+            "c:\\ue5 projects\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\ue5 projects\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\ue5 projects\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\serverstatreplicator.generated.h",
+            "c:\\ue5 projects\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gamemodebase.generated.h",
+            "c:\\tbd\\mushroom\\tbd_game\\intermediate\\build\\win64\\unrealeditor\\inc\\tbd_game\\tbd_gamegamemode.generated.h",
+            "c:\\tbd\\mushroom\\tbd_game\\source\\tbd_game\\tbd_gamecharacter.h",
+            "c:\\ue5 projects\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "c:\\ue5 projects\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "c:\\ue5 projects\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\charactermovementreplication.generated.h",
+            "c:\\ue5 projects\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "c:\\ue5 projects\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\rootmotionsource.generated.h",
+            "c:\\ue5 projects\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\character.generated.h",
+            "c:\\tbd\\mushroom\\tbd_game\\intermediate\\build\\win64\\unrealeditor\\inc\\tbd_game\\tbd_gamecharacter.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

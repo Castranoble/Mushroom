@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-TBD_Game.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\TBD\Mushroom\TBD_Game\Intermediate\Build\Win64\TBD_GameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\TBD\Mushroom\TBD_Game\Intermediate\Build\Win64\UnrealEditor\Development\TBD_Game\TBD_Game.cpp.obj"
+"C:\TBD\Mushroom\TBD_Game\Intermediate\Build\Win64\UnrealEditor\Development\TBD_Game\TBD_GameCharacter.cpp.obj"
+"C:\TBD\Mushroom\TBD_Game\Intermediate\Build\Win64\UnrealEditor\Development\TBD_Game\TBD_GameGameMode.cpp.obj"
+"C:\TBD\Mushroom\TBD_Game\Intermediate\Build\Win64\UnrealEditor\Development\TBD_Game\TBD_Game.init.gen.cpp.obj"
+"C:\TBD\Mushroom\TBD_Game\Intermediate\Build\Win64\UnrealEditor\Development\TBD_Game\TBD_GameCharacter.gen.cpp.obj"
+"C:\TBD\Mushroom\TBD_Game\Intermediate\Build\Win64\UnrealEditor\Development\TBD_Game\TBD_GameGameMode.gen.cpp.obj"
+"C:\TBD\Mushroom\TBD_Game\Intermediate\Build\Win64\UnrealEditor\Development\TBD_Game\Default.rc2.res"
+/OUT:"C:\TBD\Mushroom\TBD_Game\Intermediate\Build\Win64\UnrealEditor\Development\TBD_Game\UnrealEditor-TBD_Game.lib"

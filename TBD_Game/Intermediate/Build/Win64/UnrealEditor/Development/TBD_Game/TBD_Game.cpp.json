@@ -1,0 +1,14 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\tbd\\mushroom\\tbd_game\\source\\tbd_game\\tbd_game.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\tbd\\mushroom\\tbd_game\\intermediate\\build\\win64\\tbd_gameeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\tbd\\mushroom\\tbd_game\\intermediate\\build\\win64\\unrealeditor\\development\\tbd_game\\definitions.tbd_game.h",
+            "c:\\tbd\\mushroom\\tbd_game\\source\\tbd_game\\tbd_game.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

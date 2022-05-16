@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\TBD\\Mushroom\\TBD_Game\\Source\\TBD_Game\\TBD_Game.Build.cs",
+		"C:\\TBD\\Mushroom\\TBD_Game\\Source\\TBD_Game.Target.cs",
+		"C:\\TBD\\Mushroom\\TBD_Game\\Source\\TBD_GameEditor.Target.cs"
+	],
+	"EngineVersion": "5.0.1"
+}
