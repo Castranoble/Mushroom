@@ -1,0 +1,13 @@
+﻿  Using bundled DotNet SDK
+  Log file: C:\Users\Gaming PC\AppData\Local\UnrealBuildTool\Log.txt
+  Using 'git status' to determine working set for adaptive non-unity build (C:\TBD\Mushroom).
+  Creating makefile for TBD_GameEditor (.uproject file is newer)
+  Building TBD_GameEditor...
+  Using Visual Studio 2019 14.29.30139 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
+    Executing up to 8 processes, one per physical core
+    Requested 1.5 GB free memory per action, 10.83 GB available: limiting max parallel actions to 7
+  Building 1 action with 1 process...
+  [1/1] WriteMetadata TBD_GameEditor.target
+  Total time in Parallel executor: 0.19 seconds
+  Total execution time: 1.45 seconds
